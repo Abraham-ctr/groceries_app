@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_store/res/app_media.dart';
-import 'package:groceries_store/widgets/utils.dart';
+import 'package:groceries_store/res/utils.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
