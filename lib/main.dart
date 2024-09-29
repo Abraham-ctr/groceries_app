@@ -4,6 +4,7 @@ import 'package:groceries_store/base/number_screen.dart';
 import 'package:groceries_store/base/onboarding_screen.dart';
 import 'package:groceries_store/base/select_location_screen.dart';
 import 'package:groceries_store/base/sign_in_screen.dart';
+import 'package:groceries_store/base/sign_up_screen.dart';
 import 'package:groceries_store/base/splash_screen.dart';
 import 'package:groceries_store/base/verification_screen.dart';
 
@@ -25,11 +26,12 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/onboarding': (context) => const OnboardingScreen(),
-        '/signin': (context) => const SignInScreen(),
+        '/signin': (context) => SignInScreen(),
         '/number': (context) => const NumberScreen(),
         '/verification': (context) => const VerificationScreen(),
         '/selectlocation': (context) => const SelectLocationScreen(),
         '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignUpScreen(),
 
       }
     );

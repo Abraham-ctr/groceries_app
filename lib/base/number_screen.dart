@@ -5,11 +5,15 @@ import 'package:groceries_store/widgets/base_widgets/proceed_button.dart';
 class NumberScreen extends StatefulWidget {
   const NumberScreen({super.key});
 
+  
+
   @override
   State<NumberScreen> createState() => _NumberScreenState();
 }
 
 class _NumberScreenState extends State<NumberScreen> {
+  final FocusNode _focusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +37,10 @@ class _NumberScreenState extends State<NumberScreen> {
             const Text("Mobile Number", style: TextStyle(color: Color(0xff7C7C7C), fontSize: 12) ),
 
             //input
-            const TextField(
+            TextField(
+              focusNode: _focusNode,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0xffE2E2E2)
@@ -54,7 +59,12 @@ class _NumberScreenState extends State<NumberScreen> {
             //proceed button
             Container(
               alignment: Alignment.centerRight,
-              child: ProceedButton(onTapped: () { Navigator.pushNamed(context, '/verification'); },)
+              child: ProceedButton(
+                onTapped: () {
+                  _focusNode.unfocus();
+                  Navigator.pushNamed(context, '/verification');
+                }
+              )
             )
           ],
         ),

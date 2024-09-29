@@ -3,7 +3,9 @@ import 'package:groceries_store/res/app_media.dart';
 import 'package:groceries_store/res/utils.dart';
 
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key,});
+   SignInScreen({super.key,});
+
+  final FocusNode _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,9 @@ class SignInScreen extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 TextField(
+                  focusNode: _focusNode,
                   onTap: (){
+                    _focusNode.unfocus();
                     Navigator.pushNamed(context, '/number');
                   },
                   keyboardType: TextInputType.number,

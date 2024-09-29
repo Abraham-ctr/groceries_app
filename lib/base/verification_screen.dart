@@ -58,7 +58,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text("Resend Code", style: TextStyle(color: Color(0xff53B175)),),
-                ProceedButton(onTapped: () { Navigator.pushNamed(context, '/selectlocation'); },)
+                ProceedButton(onTapped: () { Navigator.pushReplacementNamed(context, '/selectlocation'); },)
               ],
             ),
           ],
