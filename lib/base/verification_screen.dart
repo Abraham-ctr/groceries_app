@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:groceries_store/widgets/base_widgets/go_back_button.dart';
 import 'package:groceries_store/widgets/base_widgets/proceed_button.dart';
 
@@ -10,9 +11,11 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffFEFEFE),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 50),
         child: Column(
@@ -29,7 +32,10 @@ class _VerificationScreenState extends State<VerificationScreen> {
             const Text("Code", style: TextStyle(color: Color(0xff7C7C7C), fontSize: 12) ),
 
             const TextField(
+              enabled: true,
               keyboardType: TextInputType.number,
+              maxLength: 4,
+              maxLengthEnforcement: MaxLengthEnforcement.enforced,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(horizontal: 10),
                 hintText: "- - - -",

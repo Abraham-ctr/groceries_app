@@ -13,6 +13,7 @@ class _NumberScreenState extends State<NumberScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffFEFEFE),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 50),
         child: Column(

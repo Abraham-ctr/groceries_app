@@ -3,15 +3,38 @@ import 'package:groceries_store/res/app_media.dart';
 import 'package:groceries_store/res/utils.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  const SignUpScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffFEFEFE),
+      
       body: ListView(
         children: [
-          Image.asset(AppMedia.signUp),
+
+          Stack(
+            children: [
+              Image.asset(AppMedia.signUp),
+
+              Positioned(
+                left: 260,
+                top: 10,
+                child: Transform(
+                  transform: Matrix4.rotationZ(101.17),
+                  child: Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFEFEFE),
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: const Text("nectar", style: TextStyle(color:Color(0xff53B175), fontWeight: FontWeight.bold)  )
+                  ),
+                ),
+              ),
+            ],
+          ),
 
           const SizedBox(height: 40),
           
@@ -23,15 +46,19 @@ class SignUpScreen extends StatelessWidget {
               children: [
                 const Text("Get your groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
                 const Text("with nectar", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
 
                 TextField(
-                  onTap: () => Navigator.pushNamed(context, '/number'),
+                  onTap: (){
+                    Navigator.pushNamed(context, '/number');
+                  },
                   keyboardType: TextInputType.number,
+                  textAlign: TextAlign.center,
                   decoration: const InputDecoration(
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xffE2E2E2)
+                        color: Color(0xffE2E2E2),
+                        width: 2,
                       )
                     ),
                     focusedBorder: UnderlineInputBorder(

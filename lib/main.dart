@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_store/base/login_screen.dart';
 import 'package:groceries_store/base/number_screen.dart';
 import 'package:groceries_store/base/onboarding_screen.dart';
 import 'package:groceries_store/base/select_location_screen.dart';
@@ -17,9 +18,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Groceries Store",
-      // theme: lightTheme(),
-      // darkTheme: darkTheme(),
-      // themeMode: ThemeMode.system,
+      themeMode: ThemeMode.system,
+      
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
@@ -29,23 +29,9 @@ class MainApp extends StatelessWidget {
         '/number': (context) => const NumberScreen(),
         '/verification': (context) => const VerificationScreen(),
         '/selectlocation': (context) => const SelectLocationScreen(),
+        '/login': (context) => const LoginScreen(),
+        
       }
     );
   }
 }
-
-// ThemeData lightTheme (){
-//   return ThemeData(
-//     brightness: Brightness.light,
-//     primaryColor: Color(0xff53B175),
-//     scaffoldBackgroundColor: Color(0xffFCFCFC),
-//   );
-// }
-
-// ThemeData darkTheme (){
-//   return ThemeData(
-//     brightness: Brightness.dark,
-//     primaryColor: Color(0xff53B175),
-//     scaffoldBackgroundColor: Color(0xff1A1D23),
-//   );
-// }
