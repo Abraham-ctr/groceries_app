@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:groceries_store/res/app_media.dart';
 import 'package:groceries_store/res/utils.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key,});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +18,18 @@ class SignUpScreen extends StatelessWidget {
               Image.asset(AppMedia.signUp),
 
               Positioned(
-                left: 260,
-                top: 10,
+                left: 257,
+                top: 9,
                 child: Transform(
                   transform: Matrix4.rotationZ(101.17),
                   child: Container(
                     alignment: Alignment.center,
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                     decoration: BoxDecoration(
-                      color: const Color(0xffFEFEFE),
+                      // color: const Color(0xffFEFEFE),
                       borderRadius: BorderRadius.circular(10)
                     ),
-                    child: const Text("nectar", style: TextStyle(color:Color(0xff53B175), fontWeight: FontWeight.bold)  )
+                    child: const Text("nectar", style: TextStyle(color:Color(0xff53B175), fontWeight: FontWeight.bold, fontSize: 17)  )
                   ),
                 ),
               ),
