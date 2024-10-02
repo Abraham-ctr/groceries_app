@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_store/res/app_media.dart';
 import 'package:groceries_store/res/utils.dart';
+import 'package:groceries_store/widgets/base_widgets/phone_number_input.dart';
 
 class SignInScreen extends StatelessWidget {
-   SignInScreen({super.key,});
-
-  final FocusNode _focusNode = FocusNode();
+   const SignInScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class SignInScreen extends StatelessWidget {
               Image.asset(AppMedia.signUp),
 
               Positioned(
-                left: 257,
+                left: 242,
                 top: 9,
                 child: Transform(
                   transform: Matrix4.rotationZ(101.17),
@@ -31,7 +30,7 @@ class SignInScreen extends StatelessWidget {
                       // color: const Color(0xffFEFEFE),
                       borderRadius: BorderRadius.circular(10)
                     ),
-                    child: const Text("nectar", style: TextStyle(color:Color(0xff53B175), fontWeight: FontWeight.bold, fontSize: 17)  )
+                    child: const Text("nectar", style: TextStyle(color:Color(0xff53B175), fontWeight: FontWeight.bold, fontSize: 25)  )
                   ),
                 ),
               ),
@@ -42,39 +41,18 @@ class SignInScreen extends StatelessWidget {
           
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Get your groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
-                const Text("with nectar", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
-                const SizedBox(height: 20),
+                Text("Get your groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
+                Text("with nectar", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
+                SizedBox(height: 20),
 
-                TextField(
-                  focusNode: _focusNode,
-                  onTap: (){
-                    _focusNode.unfocus();
-                    Navigator.pushNamed(context, '/number');
-                  },
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: const InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xffE2E2E2),
-                        width: 2,
-                      )
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xffE2E2E2)
-                      )
-                    )
-                  ),
-                ),
+                PhoneNumberInput(),
                 
-                const SizedBox(height: 35),
-                const Center(child: Text("Or connect with social media", style: TextStyle(color: Color(0xff828282)),)),
+                SizedBox(height: 35),
+                Center(child: Text("Or connect with social media", style: TextStyle(color: Color(0xff828282)),)),
               ],
             ),
           ),

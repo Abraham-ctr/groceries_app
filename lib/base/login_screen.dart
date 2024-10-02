@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:groceries_store/res/app_media.dart';
 import 'package:groceries_store/res/utils.dart';
+import 'package:groceries_store/widgets/base_widgets/blurred_top_with_orange_logo.dart';
 import 'package:groceries_store/widgets/base_widgets/button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -26,29 +24,8 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                Container(
-                  width: Utils.getWidth(context),
-                  height: Utils.setHeight(context, 0.25),
-                  child: Image.asset(AppMedia.blurImg, fit: BoxFit.fill,),
-                  // color: Colors.red,
-                ),
-                SizedBox(
-                  width: Utils.getWidth(context),
-                  height: Utils.setHeight(context, 0.20),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 23, sigmaY: 23),
-                    child: Container(color: Colors.white.withOpacity(0),),
-                  ),
-                ),
-        
-                Center(
-                  heightFactor: 3.5,
-                  child: Image.asset(AppMedia.orangeLogo),
-                )
-              ],
-            ),
+            const BlurredTopWithOrangeLogo(),
+
             const SizedBox(height: 30),
         
             Padding(
@@ -70,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           keyboardType: TextInputType.emailAddress,
                           decoration: const InputDecoration(
                             label: Text("Email", style: TextStyle(color: Color(0xff7C7C7C))  ),
-                            hintText: "imshuvo@gmail.com",
+                            hintText: "example@gmail.com",
                             contentPadding: EdgeInsets.symmetric(horizontal: 5),
                             border: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -122,19 +99,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   Button(text: "Log In", onButtonPressed: (){}),
 
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 10),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text("Don't have an account?"),
                       TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          
-                        ),
+                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
                         onPressed: (){Navigator.pushNamed(context, '/signup');},
-                        child: const Text("Sign Up", style: TextStyle(color: const Color(0xff53B175)),)
+                        child: const Text("Sign Up", style: TextStyle(color: Color(0xff53B175)),)
                       )
                     ],
                   )

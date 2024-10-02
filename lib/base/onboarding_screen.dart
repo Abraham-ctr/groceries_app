@@ -15,7 +15,7 @@ class OnboardingScreen extends StatelessWidget {
         height: Utils.getHeight(context),
         width: Utils.getWidth(context),
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(AppMedia.onBoarding), fit: BoxFit.fill  ),
+          image: DecorationImage(image: AssetImage(AppMedia.onBoarding), fit: BoxFit.fill ),
         ),
         child: Align(
           alignment: Alignment.bottomCenter,

@@ -8,7 +8,7 @@ class GoBackButton extends StatelessWidget {
     return GestureDetector(
       onTap: ()=>Navigator.pop(context),
       child: Container(
-        width: 50,
+        width: 40,
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
         // color: Colors.red,
