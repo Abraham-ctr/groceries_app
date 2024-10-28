@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             contentPadding: EdgeInsets.symmetric(horizontal: 5),
                             border: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0XFFE2E2E2)
+                                color: Color(0XffE2E2E2)
                               )
                             )
                           ),
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 30),
 
-                  Button(text: "Log In", onButtonPressed: (){}),
+                  Button(text: "Log In", onButtonPressed: (){Navigator.pushReplacementNamed(context, '/bottomnavbar'); }),
 
                   const SizedBox(height: 10),
 

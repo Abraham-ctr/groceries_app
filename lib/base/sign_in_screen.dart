@@ -41,18 +41,18 @@ class SignInScreen extends StatelessWidget {
           
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Get your groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
-                Text("with nectar", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
-                SizedBox(height: 20),
+                const Text("Get your groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
+                const Text("with nectar", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)  ),
+                const SizedBox(height: 20),
 
-                PhoneNumberInput(),
+                PhoneNumberInput(enabled: false, onTap: () { Navigator.pushNamed(context, '/phonenumber'); },),
                 
-                SizedBox(height: 35),
-                Center(child: Text("Or connect with social media", style: TextStyle(color: Color(0xff828282)),)),
+                const SizedBox(height: 35),
+                const Center(child: Text("Or connect with social media", style: TextStyle(color: Color(0xff828282)),)),
               ],
             ),
           ),
@@ -68,14 +68,15 @@ class SignInScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(19)
                 ),
                 child: FloatingActionButton(
+                  heroTag: "btn1",
                   onPressed: (){},
-                  backgroundColor: const Color(0Xff4A66AC),
+                  backgroundColor: const Color(0xff5383EC),
                   elevation: 0,
                   highlightElevation: 0,
                   child: const Row(
                     children: [
                       SizedBox(width: 25),
-                      Icon(Icons.facebook_rounded, size: 25, color: Color(0xffFFFFFF)  ),
+                      Icon(Icons.g_mobiledata, size: 25, color: Color(0xffFFFFFF)  ),
                       SizedBox(width: 35),
                       Text("Continue with Google", style: TextStyle(color: Color(0xffFFFFFF), fontSize: 15)  )
                     ],
@@ -92,6 +93,7 @@ class SignInScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(19)
                 ),
                 child: FloatingActionButton(
+                  heroTag: "btn2",
                   onPressed: (){},
                   backgroundColor: const Color(0Xff4A66AC),
                   elevation: 0,

@@ -45,9 +45,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Form(
                     child: Column(
                       children: [
+
                         TextFormField(
                           decoration: const InputDecoration(
-                            label: Text("Username")
+                            label: Text("Username"),
+                            floatingLabelBehavior: FloatingLabelBehavior.auto
                           ),
                         ),
                   

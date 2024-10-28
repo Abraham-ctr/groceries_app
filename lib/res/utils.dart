@@ -18,3 +18,10 @@ class Utils {
   }
   
 }
+
+class MyColors {
+  static Color background = const Color(0xffFEFEFE);
+  static Color primaryColor = const Color(0xff53B175);
+  static Color secondaryColor = const Color(0xff181725);
+  static Color tertiaryColor = Colors.white;
+}

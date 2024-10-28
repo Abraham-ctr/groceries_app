@@ -7,9 +7,12 @@ environment:
   sdk: ^3.5.2
 
 dependencies:
+  bottom_sheet: ^4.0.4
+  fluentui_system_icons: ^1.1.259
   flutter:
     sdk: flutter
-  country_picker: ^2.0.26
+  flutter_carousel_widget: ^3.0.1
+  font_awesome_flutter: ^10.7.0
   intl_phone_field: ^3.2.0
   
 
@@ -23,3 +26,12 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/bakery_and_snacks/
+    - assets/images/base/
+    - assets/images/beverages/
+    - assets/images/carousel/
+    - assets/images/checkout/
+    - assets/images/cooking_oil/
+    - assets/images/dairy_and_eggs/
+    - assets/images/fruits_and_vegetables/
+    - assets/images/meat_and_fish/

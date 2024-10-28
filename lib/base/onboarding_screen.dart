@@ -10,42 +10,58 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFEFEFE),
-      body: Container(
-        height: Utils.getHeight(context),
-        width: Utils.getWidth(context),
-        decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(AppMedia.onBoarding), fit: BoxFit.fill ),
-        ),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            height: Utils.setHeight(context, 0.5),
-            width: Utils.getWidth(context),
-            // color: Colors.red,
+      backgroundColor: Colors.transparent,
+    
+    body: SizedBox(
+      width: Utils.setWidth(context, 1.0),
+      height: Utils.getHeight(context),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+
+          // background image level
+          SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: Image.asset(AppMedia.onBoarding, fit: BoxFit.cover)
+          ),
+
+          // text and logo level
+          SizedBox(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(AppMedia.whiteLogo),
-          
-                const SizedBox(height: 10),
-          
-                const Column( //texts
-                  children: [
-                    Text("Welcome", style: AppStyles.onboardingBigText,),
-                    Text("to our store", style: AppStyles.onboardingBigText,),
-                    Text("Get your groceries in as fast as one hour", style: AppStyles.onboardingSmallText,),
-                  ],
-                ),
-          
-                const SizedBox(height: 35),
-          
-                Button(text: "Get Started", onButtonPressed: ()=> Navigator.pushNamed(context, '/signin') )
+                // top half
+                const Expanded(child: SizedBox()),
+
+                // bottom half
+                Expanded(
+                  child: Column(
+                    children: [
+                      // logo
+                      Image.asset(AppMedia.whiteLogo),
+                      const SizedBox(height: 10),
+
+                      // texts
+                      const Text("Welcome", style: AppStyles.onboardingBigText,),
+                      const Text("to our store", style: AppStyles.onboardingBigText,),
+                      const Text("Get your groceries in as fast as one hour", style: AppStyles.onboardingSmallText,),
+                      const SizedBox(height: 35),
+
+                      // button
+                      Button(text: "Get Started", onButtonPressed: (){Navigator.pushNamed(context, '/signin'); } )
+                    ],
+                  )
+                )
               ],
             ),
           ),
-        ),
+
+        ],
       ),
+    )
     );
   }
 }
+
+
+

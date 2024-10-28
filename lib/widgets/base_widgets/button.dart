@@ -9,18 +9,18 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container( //FAB
+    return Container(
       width: Utils.setWidth(context, 0.9),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(19)
       ),
-      child: FloatingActionButton(
-        elevation: 0,
-        focusElevation: 0,
-        onPressed: onButtonPressed,
-        backgroundColor: const Color(0xff53B175),
-        child: Text(text, style: const TextStyle(color: Color(0xffFFFFFF)),),
-      ),
+        child: FloatingActionButton(    //fab
+          elevation: 0,
+          focusElevation: 0,
+          onPressed: onButtonPressed,
+          backgroundColor: const Color(0xff53B175),
+          child: Text(text, style: const TextStyle(color: Color(0xffFFFFFF)),),
+        ),
     );
   }
 }
